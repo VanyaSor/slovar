@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let words = {
+        'apple': 'яблоко',
+        'house': 'дом',
+        'mouse': 'мышь'
+    };
+
+    let ball = 0; 
+    let errors = 0;
+    
+    let количество_итераций = prompt("Введите количество итераций:");
+
+
+    количество_итераций = parseInt(количество_итераций);
+
+    if (!isNaN(количество_итераций)) {
+        for (let i = 0; i < количество_итераций; i++) {
+            for (let word in words) {
+                let translate = prompt(`Переведите слово "${word}" на русский (для выхода введите "!"):`);
+
+                if (translate === '!') {
+                    break;
+                }
+
+                if (translate === words[word]) {
+                    alert('Правильно!');
+                    ball++;
+                } else {
+                    alert('Неправильно!');
+                    errors++;
+                }
+            }
+        }
+
+        alert(`Правильно: ${ball}, неправильно: ${errors}`);
+    } else {
+        alert("Вы ввели некорректное значение для количества итераций.");
+    }
+
+    document.write('<h2>Словарь:</h2>');
+    for (let word in words) {
+        document.write(`<p>${word} - ${words[word]}</p>`);
+    }
+
+    </script>
+</body>
+</html>
