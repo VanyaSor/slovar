@@ -17,13 +17,13 @@
     let ball = 0; 
     let errors = 0;
     
-    let количество_итераций = prompt("Введите количество итераций:");
+    let iterations = prompt("Введите количество итераций:");
 
 
-    количество_итераций = parseInt(количество_итераций);
+    iterations = parseInt(iterations);
 
-    if (!isNaN(количество_итераций)) {
-        for (let i = 0; i < количество_итераций; i++) {
+    if (!isNaN(iterations)) {
+        for (let i = 0; i < iterations; i++) {
             for (let word in words) {
                 let translate = prompt(`Переведите слово "${word}" на русский (для выхода введите "!"):`);
 
